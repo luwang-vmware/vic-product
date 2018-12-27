@@ -16,7 +16,7 @@
 Documentation  Test 5-08 - DRS
 Resource  ../../resources/Util.robot
 Suite Setup  Nimbus Suite Setup  DRS Setup
-Suite Teardown  Run Keyword And Ignore Error  Nimbus Cleanup  ${list}
+#Suite Teardown  Run Keyword And Ignore Error  Nimbus Cleanup  ${list}
 Test Teardown  Run Keyword If  '${TEST STATUS}' != 'PASS'  Collect Appliance and VCH Logs  ${VCH-NAME}
 
 *** Keywords ***
@@ -53,4 +53,4 @@ Test
     # create vch and set docker params
     Wait Until Keyword Succeeds  3x  1m  Create VCH using UI And Set Docker Parameters  5-08-TEST-DRS  %{TEST_DATASTORE}  %{BRIDGE_NETWORK}  %{PUBLIC_NETWORK}  %{TEST_USERNAME}  %{TEST_PASSWORD}
     # run vch regression tests
-    Run Docker Regression Tests For VCH
+  #  Run Docker Regression Tests For VCH
